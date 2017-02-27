@@ -1,6 +1,7 @@
 var restify = require('restify');
 var builder = require('botbuilder');
 var express = require('express');
+var prompts = require('./prompts');
 var app = express()
 
 
@@ -35,7 +36,7 @@ bot.dialog('/', intents);
 intents.matches('Hi', [
     function (session, args, next) {
         console.log("hi");
-        //builder.Prompts.text(session, "Hello...  How can I help you today?");
+        builder.Prompts.text(session, "Hello...  How can I help you today?");
         next();
     }
 ]);
