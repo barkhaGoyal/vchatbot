@@ -1,8 +1,8 @@
 var restify = require('restify');
 var builder = require('botbuilder');
-/*var express = require('express')
+var express = require('express');
 var app = express()
-*/
+
 
 
 //=========================================================
@@ -11,7 +11,7 @@ var app = express()
 
 // Setup Restify Server
 var server = restify.createServer();
-app.set('port', process.env.PORT)
+app.set('port', process.env.PORT);
 server.listen(process.env.port || process.env.PORT || 3978, function () {
    console.log('%s listening to %s', server.name, server.url); 
 });
@@ -32,8 +32,3 @@ bot.dialog('/', function (session) {
 	console.log("Entered bot.dialog");
     session.send("Hello World HEllooooooo");
 });
-
-/*app.get('/', function (req, res) {
-  console.log("Entered app.get");
-  res.send('Hello World!')
-})*/
