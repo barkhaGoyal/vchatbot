@@ -29,9 +29,11 @@ server.post('/api/messages', connector.listen());
 //=========================================================
 
 bot.dialog('/', function (session) {
+	console.log("Entered bot.dialog");
     session.send("Hello World HEllooooooo");
 });
 
 app.get('/', function (req, res) {
+  console.log("Entered app.get");
   res.send('Hello World!')
 })
