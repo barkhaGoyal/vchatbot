@@ -1,7 +1,7 @@
 var restify = require('restify');
 var builder = require('botbuilder');
 var express = require('express');
-var prompts = require('./prompts');
+var Prompts = require('prompt');
 var app = express()
 
 
@@ -31,11 +31,11 @@ var model = 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/210b186e-
 
 var recognizer = new builder.LuisRecognizer(model);
 var intents = new builder.IntentDialog({ recognizers: [recognizer] });
-bot.dialog('/', intents);
+//bot.dialog('/', intents);
 
 intents.matches('Hi', [
     function (session, args, next) {
-        console.log("hi");
+       // console.log("hi");
         builder.Prompts.text(session, "Hello...  How can I help you today?");
         next();
     }
@@ -46,7 +46,15 @@ intents.matches('Hi', [
 // Bots Dialogs
 //=========================================================
 
-bot.dialog('/', function (session) {
-	console.log("Entered bot.dialog");
-    session.send("Hello World HEllooooooo");
-});
+//bot.dialog('/', function (session) {
+//	console.log("Entered bot.dialog");
+ //   session.send("Hello World HEllooooooo");
+//});
+
+intents.matches('Time', [
+    function (session, args, next) {
+       // console.log("Time");
+        builder.Prompts.text(session, "Time is 5 o clk");
+        next();
+    }
+]);	
