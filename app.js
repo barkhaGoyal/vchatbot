@@ -1,8 +1,8 @@
 var restify = require('restify');
 var builder = require('botbuilder');
-var express = require('express')
+/*var express = require('express')
 var app = express()
-
+*/
 
 
 //=========================================================
@@ -33,7 +33,7 @@ bot.dialog('/', function (session) {
     session.send("Hello World HEllooooooo");
 });
 
-app.get('/', function (req, res) {
+/*app.get('/', function (req, res) {
   console.log("Entered app.get");
   res.send('Hello World!')
-})
+})*/
