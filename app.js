@@ -1,5 +1,9 @@
 var restify = require('restify');
 var builder = require('botbuilder');
+var express = require('express')
+var app = express()
+
+
 
 //=========================================================
 // Bot Setup
@@ -27,3 +31,7 @@ server.post('/api/messages', connector.listen());
 bot.dialog('/', function (session) {
     session.send("Hello World HEllooooooo");
 });
+
+app.get('/', function (req, res) {
+  res.send('Hello World!')
+})
